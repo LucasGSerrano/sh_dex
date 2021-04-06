@@ -4,18 +4,20 @@ class HeroModel {
   String? response;
   int? id;
   String? name;
+  String? slug;
   Powerstats? powerstats;
   Biography? biography;
   Appearance? appearance;
   Work? work;
   Connections? connections;
-  Image? images;
+  ImageModel? images;
   String? error;
 
   HeroModel(
       {this.response,
       this.id,
       this.name,
+      this.slug,
       this.powerstats,
       this.biography,
       this.appearance,
@@ -29,6 +31,7 @@ class HeroModel {
 
     id = json['id'];
     name = json['name'];
+    slug = json['slug'];
     powerstats = json['powerstats'] != null
         ? new Powerstats.fromJson(json['powerstats'])
         : null;
@@ -42,7 +45,8 @@ class HeroModel {
     connections = json['connections'] != null
         ? new Connections.fromJson(json['connections'])
         : null;
-    images = json['images'] != null ? new Image.fromJson(json['images']) : null;
+    images =
+        json['images'] != null ? new ImageModel.fromJson(json['images']) : null;
     error = json['error'];
   }
 
@@ -51,6 +55,7 @@ class HeroModel {
     data['response'] = this.response;
     data['id'] = this.id;
     data['name'] = this.name;
+    data['slug'] = this.slug;
     if (this.powerstats != null) {
       data['powerstats'] = this.powerstats?.toJson();
     }

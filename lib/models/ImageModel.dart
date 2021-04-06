@@ -1,4 +1,4 @@
-class Image {
+class ImageModel {
   String? xs;
 
   String? sm;
@@ -7,7 +7,7 @@ class Image {
 
   String? lg;
 
-  Image.fromJson(Map<String, dynamic> json) {
+  ImageModel.fromJson(Map<String, dynamic> json) {
     xs = json['xs'];
     sm = json['sm'];
     md = json['md'];

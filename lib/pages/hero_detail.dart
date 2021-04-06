@@ -6,8 +6,7 @@ import 'package:sh_dex/models/Connections.dart';
 import 'package:sh_dex/models/HeroModel.dart';
 import 'package:sh_dex/models/Powerstats.dart';
 import 'package:sh_dex/models/Work.dart';
-import 'package:sh_dex/widgets/powerstats_chart.dart';
-import 'package:sh_dex/widgets/hero_detail_data.dart';
+import 'package:sh_dex/widgets/widgets.dart';
 
 class HeroDetails extends StatelessWidget {
   final HeroModel heroData;
@@ -27,15 +26,13 @@ class HeroDetails extends StatelessWidget {
             child: SizedBox(
               height: MediaQuery.of(context).size.width,
               width: MediaQuery.of(context).size.width,
-              // child: ClipOval(
               child: Hero(
-                tag: heroData.images!.lg!,
+                tag: heroData.slug!,
                 child: CachedNetworkImage(
                   fit: BoxFit.fitWidth,
                   imageUrl: heroData.images!.lg!,
                 ),
               ),
-              // ),
             ),
           ),
           if (heroData.appearance != null)
